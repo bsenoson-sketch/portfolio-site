@@ -1,0 +1,55 @@
+---
+// Phase 3: The "Professional" Code Logic
+const projects = [
+  {
+    title: "Cloud-Sync Dashboard",
+    stack: "Astro, SQL, Cloudflare",
+    problem: "Data latency was causing 5-second delays in user updates.",
+    solution: "Edge-cached the API responses using Cloudflare Workers, hitting <100ms latency.",
+    link: "https://github.com/yourname/project"
+  }
+];
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Portfolio Site</title>
+	</head>
+	<body>
+		<h1>Full-Stack Developer</h1>
+		<p>I am a developer specializing in Web Design. I solve [Specific Problem] for [Target Audience].</p>
+
+		<section id="proof">
+			<h2>Project Gallery</h2>
+			{projects.map(p => (
+				<div class="card">
+					<h3>{p.title} <small><a href={p.link}>[GitHub]</a></small></h3>
+					<p class="tech">{p.stack}</p>
+					<p><strong>Problem:</strong> {p.problem}</p>
+					<p><strong>Solution:</strong> {p.solution}</p>
+				</div>
+			))}
+		</section>
+
+		<section id="resume">
+			<h2>Skills</h2>
+			<ul>
+				<li>Languages: TypeScript, SQL, HTML/CSS</li>
+				<li>Frameworks: Astro, React, Node.js</li>
+			</ul>
+		</section>
+
+		<section id="contact">
+			<h2>Contact</h2>
+			<form action="https://formspree.io/f/your-id" method="POST">
+				<input name="email" type="email" placeholder="Email" required />
+				<textarea name="message" placeholder="Project details..."></textarea>
+				<button type="submit">Deploy Inquiry</button>
+			</form>
+		</section>
+	</body>
+</html>
